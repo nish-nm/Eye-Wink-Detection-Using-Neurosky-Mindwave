@@ -14,51 +14,10 @@ del dataset['meditation']
 columns_list = ['blinkStrength', 'delta', 'highAlpha', 'highBeta', 'highGamma', 'lowAlpha', 'lowBeta', 'lowGamma', 'theta']
 X = dataset[['blinkStrength', 'delta', 'highAlpha', 'highBeta', 'highGamma', 'lowAlpha', 'lowBeta', 'lowGamma', 'theta', 'LTYRTY', 'LOR']]
 
-i = 1
-length_X = len(X)
-while i < length_X:
-        temp = 1
-        for j in X.iloc[i-1,:].values == X.iloc[i,:].values:
-            if j == False:
-                temp = 0
-        if temp:
-            X.drop(X.index[i], inplace=True)
-        length_X = len(X)
-        i += 1   
+X_model = np.loadtxt('X_model.txt', dtype=float)
 
-i = 0
-columns_list = columns_list[:]
-for i in range(0,len(X)):
-    for j in range(0,len(columns_list)):
-        #print(1)
-        X[columns_list[j]][i] = np.fromstring(X.iloc[i,j][8:-3], sep=',')
-
-
-#X = X.drop_duplicates()
-
-#X.drop(X.index[0], inplace=True)
-
-        
-#y = X.iloc['']
-y = []
-X_model = []
-for i in range(0,len(X)):
-    temp_list = []
-    if X.LOR.iloc[i] == 0:
-        continue
-    for columns in X.columns:
-        if columns == 'LTYRTY' or columns == 'LOR':
-            continue
-        for j in range(0,3):    
-            temp_list.append(X[columns][i][j])
-    X_model.append(np.array(temp_list))
-    y.append(X.LOR.iloc[i])
-
-y = np.array(y)                 
-'''                 
-for i in range(0,len(X_model)):
-    X_model[i].flatten()
-'''                
+y = np.loadtxt('y_model.txt', dtype=int)
+                
 # Splitting the dataset into the Training set and Test set
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X_model, y, test_size = 0.1, random_state = 0)
@@ -69,13 +28,15 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
-# Fitting Kernel SVM to the Training set
-from sklearn.svm import SVC
-classifier = SVC(kernel = 'rbf', random_state = 0, verbose=True)
-classifier.fit(X_train, y_train)
 
+#BEST ONE
+# Fitting Kernel SVM to the Training set
+from sklearn.ensemble import RandomForestClassifier
+classifier = RandomForestClassifier(n_estimators = 900, criterion = 'gini', random_state = 0, n_jobs=1)
+classifier.fit(X_train, y_train)
 # Predicting the Test set results
 y_pred = classifier.predict(X_test)
+
 
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
@@ -83,6 +44,11 @@ cm = confusion_matrix(y_test, y_pred)
 
 from sklearn.metrics import accuracy_score
 accuracy_score(y_pred, y_test)
+
+from sklearn.externals import joblib
+
+joblib_file = "model.pkl"
+joblib.dump(classifier, joblib_file)
 
 '''
 from matplotlib.colors import ListedColormap
