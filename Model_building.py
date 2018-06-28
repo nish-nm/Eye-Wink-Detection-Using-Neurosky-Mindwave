@@ -28,21 +28,24 @@ sc = StandardScaler()
 X_train = sc.fit_transform(X_train)
 X_test = sc.transform(X_test)
 
-
+accuracy_scores = []
 #BEST ONE
 # Fitting Kernel SVM to the Training set
 from sklearn.ensemble import RandomForestClassifier
-classifier = RandomForestClassifier(n_estimators = 900, criterion = 'gini', random_state = 0, n_jobs=1)
-classifier.fit(X_train, y_train)
-# Predicting the Test set results
-y_pred = classifier.predict(X_test)
-
+from sklearn.metrics import accuracy_score
+for n_estimators in range(100,2000,100):
+    classifier = RandomForestClassifier(n_estimators = n_estimators, criterion = 'gini', random_state = 0, n_jobs=1)
+    classifier.fit(X_train, y_train)
+    # Predicting the Test set results
+    y_pred = classifier.predict(X_test)
+    accuracy_scores.append([accuracy_score(y_pred, y_test)])
+    
+plt.plot(range(100,2000,100), accuracy_scores)    
 
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
 cm = confusion_matrix(y_test, y_pred)
 
-from sklearn.metrics import accuracy_score
 accuracy_score(y_pred, y_test)
 
 from sklearn.externals import joblib
