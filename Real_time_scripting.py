@@ -177,9 +177,9 @@ while time.clock() - start < 100:
 				all_values += 1
 				if value[0] == 2:
 					right_values += 1
-					#pyautogui.click(button='right', x=100, y=10, clicks=2)
-				#elif value[0] == 1:
-					#pyautogui.click(button='left', x=100, y=10, clicks=2)
+					pyautogui.click(button='right', x=100, y=10, clicks=2)
+				elif value[0] == 1:
+					pyautogui.click(button='left', x=100, y=10, clicks=2)
 				
 
 print right_values/all_values
