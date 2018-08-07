@@ -26,6 +26,5 @@ Json
       > python Real_time_scripting.py
 ```
  # YouTube video
-![Youtube Video](https://img.youtube.com/vi/WP5WLFMdx9s/0.jpg)](https://www.youtube.com/watch?v=WP5WLFMdx9s)
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=WP5WLFMdx9s" target="_blank"><img src="http://img.youtube.com/vi/WP5WLFMdx9s/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+alt="Video" width="240" height="180" border="10" /></a>
