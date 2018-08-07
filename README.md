@@ -18,6 +18,5 @@ Json
       conda create -n python2 python=2.7 anaconda
 2. Activate your virtual environment
       source activate python2
-
-
-
+3. Run the command in command line
+      > python pytel2.py
