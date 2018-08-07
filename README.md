@@ -14,14 +14,10 @@ Json
 # How to setup
 ```
 1. Create a python 2.7 virtual environment
-      ```python
       conda update conda
       conda create -n python2 python=2.7 anaconda
-      ```
-2. Activate your virtual environment.
-      ```python
+2. Activate your virtual environment
       source activate python2
-      ```
 
 
 
