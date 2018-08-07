@@ -26,4 +26,4 @@ Json
       > python Real_time_scripting.py
 ```
  # YouTube video
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/WP5WLFMdx9s/0.jpg)](https://www.youtube.com/watch?v=WP5WLFMdx9s)
+![Youtube Video](https://img.youtube.com/vi/WP5WLFMdx9s/0.jpg)](https://www.youtube.com/watch?v=WP5WLFMdx9s)
