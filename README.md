@@ -28,3 +28,9 @@ Json
  # YouTube video
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=WP5WLFMdx9s" target="_blank"><img src="http://img.youtube.com/vi/WP5WLFMdx9s/0.jpg" 
 alt="Video" width="240" height="180" border="10" /></a>
+
+# Team Members
+1. [Akhila Gopal](https://github.com/akhilagopal)
+2. [Milan Jolly](https://github.com/mijo2)
+3. [Nishant Mishra](https://github.com/nish-nm)
+4. [Shubham Agarwal](https://github.com/ShubhamAgarwal1616)
