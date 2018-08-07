@@ -12,11 +12,14 @@ PyAutoGui
 Json
 ```
 # How to setup
-```
 1. Create a python 2.7 virtual environment
-      conda update conda
-      conda create -n python2 python=2.7 anaconda
+      > conda update conda
+      > conda create -n python2 python=2.7 anaconda
 2. Activate your virtual environment
-      source activate python2
-3. Run the command in command line
+      > source activate python2
+3. Run the command in command line after connecting to neurosky mindwave mobile
       > python pytel2.py
+4. Run model building script
+      > python Model_building.py
+5. For running real time wink detector
+      > python Real_time_scripting.py
