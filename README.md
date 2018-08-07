@@ -12,6 +12,7 @@ PyAutoGui
 Json
 ```
 # How to setup
+```python
 1. Create a python 2.7 virtual environment
       > conda update conda
       > conda create -n python2 python=2.7 anaconda
@@ -23,3 +24,4 @@ Json
       > python Model_building.py
 5. For running real time wink detector
       > python Real_time_scripting.py
+```
