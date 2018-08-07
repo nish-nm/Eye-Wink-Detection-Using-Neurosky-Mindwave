@@ -11,6 +11,22 @@ Telnet
 PyAutoGui
 Json
 ```
+# How to setup
+```
+<ol>
+  <li>Create a python 2.7 virtual environment
+      ```python
+      conda update conda
+      conda create -n python2 python=2.7 anaconda
+      ```
+  </li>
+  <li>
+      Activate your virtual environment.
+      ```python
+      source activate python2
+      ```
+  </li>
+</ol>
 
 
 
